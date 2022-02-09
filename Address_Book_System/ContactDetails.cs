@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace AddressBookFromUC11
+namespace Address_Book_System
 {
     class ContactDetails
     {
