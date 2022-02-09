@@ -242,6 +242,9 @@ namespace Address_Book_System
                    - Use Collection Library for Sorting.
                    - Override toString method to finally Print Person Entry in Concole.
                    - Use Lambda Expression.
+           UC12:- Ability to sort the entries in the address book by City, State, or Zip
+                   - Write functions to sort person by City, State or Zip
+                   - Use Collection Library for Sorting
         */
         public void GetAllContacts()
         {
@@ -251,14 +254,22 @@ namespace Address_Book_System
                 return;
             }
             List<ContactDetails> listForSorting = null;
-            Console.WriteLine("Select the Sorting Record\n1.Name");//Print 
+            Console.WriteLine("Select the Sorting Record\n1.Name\n2.City\n3.State\n4.Zip");//Print 
             int op = Convert.ToInt32(Console.ReadLine()); //take input
             switch (op)
             {
                 case 1:
                     listForSorting = contactList.OrderBy(contact => (contact.FirstName + contact.LastName)).ToList(); //sort Name wise using lambda Expression
                     break;
-
+                case 2:
+                    listForSorting = contactList.OrderBy(contact => contact.City).ToList(); //Sorting city using lambda Expression
+                    break;
+                case 3:
+                    listForSorting = contactList.OrderBy(contact => contact.Zip).ToList(); //Sorting zip code using lambda Expression
+                    break;
+                case 4:
+                    listForSorting = contactList.OrderBy(contact => contact.State).ToList(); //Sorting State using lambda Expression
+                    break;
                 default:
                     listForSorting = contactList;
                     break;
